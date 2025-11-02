@@ -1,0 +1,175 @@
+/* ===== General ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  background-color: #121212;
+}
+
+/* ===== Header / Hero Section ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+  gap: 16px;
+  text-align: center;
+
+  background-image: url('photo_1_2025-10-30_23-20-41.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* ✅ الخلفية تبقى ثابتة */
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.header-content {
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* ===== Logo & School Image ===== */
+.logo {
+  padding-left: 40px;
+  justify-self: start;
+  width: clamp(200px, 20vw, 400px);
+  height: auto;
+  z-index: 3;
+ 
+}
+
+.school-img {
+  padding-right: 40px;
+  justify-self: end;
+  width: clamp(250px, 22vw, 420px);
+  height: auto;
+  border-radius: 10px;
+  z-index: 3;
+}
+
+/* ===== Hero Text ===== */
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0 0 10px;
+  color: #6c0404;
+  animation: slideDown 1.5s ease;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: #7491ad;
+  margin: 0;
+  animation: slideUp 1.5s ease;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Navigation ===== */
+nav {
+
+  background-color: #280404;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 10px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2f80ed;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #2f80ed;
+}
+
+/* ===== Sections ===== */
+section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+section h2 {
+  color: #2f80ed;
+  border-left: 4px solid #24aad6;
+  padding-left: 10px;
+}
+
+section p {
+  color: #e6e6e6;
+  line-height: 1.8em;
+  font-size: 1.1em;
+}
+
+/* ===== Gallery ===== */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #2f80ed;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+  font-size: 0.9em;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .logo {
+    justify-self: center;
+    width: clamp(100px, 25vw, 200px);
+  }
+   .school-img {
+   padding-right: 35%;
+    width: clamp(100px, 25vw, 200px);
+  }
+  .header-content {
+    padding: 12px 18px;
+  }
+}
